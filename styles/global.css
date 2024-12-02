@@ -31,10 +31,12 @@
   --fw-base: 400;
   --fw-md: 500;
   --fw-bold: 700;
+
+  --ff: "Raleway", serif;
 }
 
 html {
-  font-family: "Raleway", serif;
+  font-family: var(--ff);
   color: var(--text-body);
   scroll-behavior: smooth;
 }
@@ -43,7 +45,7 @@ body {
   background-color: var(--shape-background);
 }
 
-h1, h2, h3, h4, button {
+h1, h2, h3, h4, .button-text {
   color: var(--text-title);
   font-weight: var(--fw-bold);
 }
@@ -64,21 +66,30 @@ h4 {
   font-size: 1rem;
 }
 
-button {
+.button-text {
   font-size: 0.875rem;
 }
 
 .subtitle {
-  font: var(--fw-md) 2rem/2;
+  font: var(--fw-md) 2rem/2 var(--ff);
 }
 
 .link {
-  font: var(--fw-md) 0.875rem;
+  font: var(--fw-md) 0.875rem var(--ff);
   color: var(--blue-light);
 }
 
 .tag {
-  font: var(--fw-bold) 0.625rem;
+  font: var(--fw-bold) 0.625rem var(--ff);
   text-transform: uppercase;
   letter-spacing: 0.05px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
 }
