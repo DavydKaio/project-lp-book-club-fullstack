@@ -1,14 +1,18 @@
 #hero {
+  max-width: 90rem;
+  margin-inline: auto;
+  overflow: hidden;
+  background: url(../assets/images/Blur.svg) no-repeat top/134%;
+
   & .hero {
-    max-width: 90rem;
     width: 100%;
     height: 59.25rem;
-    margin-inline: auto;
     
     padding-block: 3.5rem 5rem;
     padding-inline: 7.5rem;
   
     background: url(../assets/images/hero-background.png) center/134% no-repeat;
+    animation: fadeIn 2s linear;
   
     & nav {
       display: flex;
@@ -16,10 +20,40 @@
       justify-content: space-between;
   
       & a {
+        display: inline-block;
         padding-block: 0.75rem;
         padding-inline: 1.25rem;
-        border-radius: .5rem;
+        text-align: center;
         background-color: var(--pink-dark);
+        border-radius: .5rem;
+        position: relative;
+        overflow: hidden;
+
+        &::before {
+          content: "";
+          background-color: var(--pink-base);
+          
+          position: absolute;
+          border-radius: 50%;
+          top: 50%;
+          left: 50%;
+          width: 0;
+          height: 0;
+
+          translate: -50% -50%;
+
+          transition: width .3s linear, height .3s linear;
+        }
+
+        &:hover::before {
+          width: 150px;
+          height: 150px;
+        }
+
+        & span {
+          position: relative;
+          z-index: 1;
+        }
       }
     }
   
@@ -43,22 +77,108 @@
     margin-inline: auto;
     margin-top: 6rem;
 
-    & div {
+    & .content {
       position: relative;
       max-width: 75rem;
       text-align: center;
       margin-inline: auto;
 
-      & > img {
-        width: 5.5rem;
-        height: auto;
-        rotate: 20deg;
-        margin-right: 3rem;
+      &:hover {
+        & > img {
+          width: 5.5rem;
+
+          transition: width .3s, transform .3s ease;
+
+          animation: popUpImage .3s forwards;
+        }
+        
+        & p {
+          & span:nth-child(1) {
+            transition: color .3s;
+
+            & strong {
+              transition: color .3s;
+            }
+          }
+
+          & span:nth-child(2) {
+            transition: color .3s .7s;
+
+            & strong {
+              transition: color .3s .7s;
+            }
+          }
+
+          & span:nth-child(3) {
+            transition: color .3s 1.4s;
+
+            & strong {
+              transition: color .3s 1.4s;
+            }
+          }
+
+          & span {
+            color: var(--text-body);
+
+            & strong {
+              color: var(--blue-light);
+            }
+          }
+        }
+
+        & div {
+          & > img:nth-child(1) {
+            width: 5rem;
+            transition: width .3s .7s, transform .3s ease;
+
+            animation: popUpImage .3s .7s forwards;
+          }
+
+          & > img:nth-child(2) {
+            width: 4.5rem;
+            transition: width .3s 1.4s, transform .3s ease;
+
+            animation: popUpImage .3s 1.4s forwards;
+          }
+        }
       }
 
-      & strong {
-        font-weight: 700;
-        color: var(--blue-light);
+      & > img {
+        /* width: 5.5rem; */
+        width: 0;
+        height: auto;
+        rotate: 20deg;
+
+        position: absolute;
+        top: 2.5rem;
+        left: 48%;
+
+        translate: -50% -50%;
+
+        transition: width .3s;
+
+        &:hover {
+          transform: rotate(10deg) scale(1.12);
+
+          transition: transform .3s;
+        }
+      }
+
+      & p {
+        padding-top: 5.625rem;
+
+        & span {
+          transition: color .3s;
+
+          color: #e2e7e980;
+
+          & strong {
+            transition: color .3s;
+
+            font-weight: 700;
+            color: #e2e7e980;
+          }
+        }
       }
 
       & div {
@@ -67,19 +187,61 @@
         justify-content: space-between;
 
         & img:nth-child(1) {
-          width: 5rem;
+          /* width: 5rem; */
+          width: 0;
           height: auto;
           margin-left: 2.5rem;
           rotate: 100deg;
+
+          transition: width .3s;
+
+          &:hover {
+            transform: rotate(10deg) scale(1.12);
+
+            transition: transform .3s;
+          }
         }
 
         & img:nth-child(2) {
-          width: 4.5rem;
+          /* width: 4.5rem; */
+          width: 0;
           height: auto;
           rotate: -14.5deg;
           margin: 0;
+
+          transition: width .3s;
+
+          &:hover {
+            transform: rotate(10deg) scale(1.12);
+
+            transition: transform .3s;
+          }
         }
       }
     }
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes popUpImage {
+  0% {
+    scale: 0;
+  }
+
+  80% {
+    scale: 1.2;
+  }
+
+  100% {
+    scale: 1;
   }
 }
