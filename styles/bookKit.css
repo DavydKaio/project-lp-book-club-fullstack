@@ -1,0 +1,300 @@
+#bookKit {
+  max-width: 90rem;
+  margin-inline: auto;
+  overflow: hidden;
+
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  background: url(../assets/images/blur-book.svg) 50% 40%/cover no-repeat;
+
+  & > div:nth-child(1) {
+    margin-top: 14.7rem;
+    margin-bottom: 5px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  & p {
+    font: var(--fw-base) 1rem/1.4 var(--ff);
+  }
+
+  & > p + div {
+    margin-top: 5.5rem;
+    padding-block: 8.375rem 16.81rem;
+
+    position: relative;
+
+    &:hover {
+      & > img:nth-child(2) {
+        animation: slideBookmarkYellowIn 1s ease forwards
+      }
+
+      & > img:nth-child(3) {
+        animation: slideBookmarkPurpleIn 1s ease forwards;
+      }
+
+      & > .bookmarkText {
+        animation: slideBookmarkTextIn 1s ease forwards;
+        & > img {
+          width: 9rem;
+          transition: width .8s ease;
+        } 
+      }
+
+      & > .coverText {
+        animation: slideCoverTextIn 1s ease forwards;
+        & > img {
+          width: 10.94rem;
+          transition: width .8s ease;
+        }
+      }
+
+      & > img:nth-child(6) {
+        animation: slidePinIn 1s ease forwards;
+      }
+
+      & > .pinText {
+        animation: slidePinTextIn 1s ease forwards;
+        & > img {
+          width: 6.56rem;
+          transition: width .8s ease;
+        }
+      }
+    }
+
+    & > img:first-child {
+      width: 29.2rem;
+    }
+
+    & > img:nth-child(2) {
+      height: 33.5rem;
+
+      position: absolute;
+      right: 0;
+      top: 8.75rem;
+      z-index: -1;
+
+      animation: slideBookmarkYellowOut .7s ease forwards;
+    }
+
+    & > img:nth-child(3) {
+      height: 33.5rem;
+
+      position: absolute;
+      right: 0;
+      top: 8.75rem;
+      z-index: -2;
+
+      animation: slideBookmarkPurpleOut .7s ease forwards;
+    }
+
+    & > .bookmarkText {
+      position: absolute;
+      right: 1rem;
+      bottom: 20rem;
+      z-index: -1;
+
+      animation: slideBookmarkTextOut .7s ease forwards;
+      
+      & > img {
+        width: 3rem;
+        margin-bottom: 1rem;
+        margin-left: 8.5rem;
+
+        transition: width .8s ease;
+      }
+    }
+
+    & > .coverText {
+      position: absolute;
+      top: 9.75rem;
+      left: 3rem;
+      z-index: -1;
+
+      animation: slideCoverTextOut .7s ease forwards;
+
+      & > img {
+        width: 3rem;
+        margin-top: 1rem;
+        margin-right: -9.5rem;
+
+        transition: width .8s ease;
+      }
+    }
+
+    & > img:nth-child(6) {
+      position: absolute;
+      left: 1.4rem;
+      bottom: 15.1rem;
+      width: 13.9rem;
+      z-index: -1;
+
+      animation: slidePinOut 0.7s ease forwards;
+    }
+
+    & > .pinText {
+      position: absolute;
+      left: 3rem;
+      bottom: 20rem;
+      z-index: -1;
+
+      animation: slidePinTextOut .7s ease forwards;
+
+      & > img {
+        width: 3rem;
+        margin-top: 1rem;
+        transition: width .8s ease;
+      }
+    }
+  }
+}
+
+@keyframes slideBookmarkYellowIn {
+  50% {
+    transform: translateX(calc(8.3rem + 7px)) translateY(calc(-6rem - 7px)) rotate(12deg);
+  }
+
+  100% {
+    transform: translateX(8.3rem) translateY(-6rem) rotate(12deg);
+  }
+}
+
+@keyframes slideBookmarkYellowOut {
+  0% {
+    transform: translateX(8.3rem) translateY(-6rem) rotate(12deg);
+  }
+
+  50% {
+    transform: translateX(calc(8.3rem + 7px)) translateY(calc(-6rem - 7px)) rotate(12deg);
+  }
+
+  100% {
+    transform: translateX(0) translateY(0) rotate(0);
+  }
+}
+
+@keyframes slideBookmarkPurpleIn {
+  50% {
+    transform: translateX(calc(15.5rem + 7px)) rotate(22deg);
+  }
+
+  100% {
+    transform: translateX(15.5rem) rotate(22deg);
+  }
+}
+
+@keyframes slideBookmarkPurpleOut {
+  0% {
+    transform: translateX(15.5rem) rotate(22deg);
+  }
+
+  50% {
+    transform: translateX(calc(15.5rem + 7px)) rotate(22deg);
+  }
+
+  100% {
+    transform: translateX(0) translateY(0) rotate(0);
+  }
+}
+
+@keyframes slideBookmarkTextIn {
+  50% {
+    transform: translateX(calc(12.5rem + 7px)) translateY(calc(8rem + 7px));
+  }
+
+  100% {
+    transform: translateX(calc(12.5rem)) translateY(calc(8rem));
+  }
+}
+
+@keyframes slideBookmarkTextOut {
+  0% {
+    transform: translateX(calc(12.5rem)) translateY(calc(8rem));
+  }
+
+  50% {
+    transform: translateX(calc(12.5rem + 7px)) translateY(calc(8rem + 7px));
+  }
+
+  100% {
+    transform: translateX(0) translateY(0) rotate(0);
+  }
+}
+
+@keyframes slideCoverTextIn {
+  50% {
+    transform: translateX(calc(-14.4rem - 7px)) translateY(calc(-5rem - 7px));
+  }
+
+  100% {
+    transform: translateX(calc(-14.4rem)) translateY(calc(-5rem));
+  }
+}
+
+@keyframes slideCoverTextOut {
+  0% {
+    transform: translateX(calc(-14.4rem)) translateY(calc(-5rem));
+  }
+
+  50% {
+    transform: translateX(calc(-14.4rem - 7px)) translateY(calc(-5rem - 7px));
+  }
+
+  100% {
+    transform: translateX(0) translateY(0) rotate(0);
+  }
+}
+
+@keyframes slidePinIn {
+  50% {
+    transform: translateX(calc(-10.2rem - 7px)) translateY(calc(3rem + 7px)) rotate(-8deg);
+  }
+
+  100% {
+    transform: translateX(-10.2rem) translateY(3rem) rotate(-8deg);
+  }
+}
+
+@keyframes slidePinOut {
+  0% {
+    transform: translateX(-10.2rem) translateY(3rem) rotate(-8deg);
+  }
+
+  50% {
+    transform: translateX(calc(-10.2rem - 7px)) translateY(calc(3rem + 7px)) rotate(-8deg);
+  }
+
+  100% {
+    transform: translateX(0) translateY(0) rotate(0);
+  }
+}
+
+@keyframes slidePinTextIn {
+  50% {
+    transform: translateX(calc(-15.4rem - 7px)) translateY(calc(-5rem - 7px));
+  }
+
+  100% {
+    transform: translateX(calc(-15.4rem)) translateY(calc(-5rem));
+  }
+}
+
+@keyframes slidePinTextOut {
+  0% {
+    transform: translateX(calc(-15.4rem)) translateY(calc(-5rem));
+  }
+
+  50% {
+    transform: translateX(calc(-15.4rem - 7px)) translateY(calc(-5rem - 7px));
+  }
+
+  100% {
+    transform: translateX(0) translateY(0) rotate(0);
+  }
+}
