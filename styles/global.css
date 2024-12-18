@@ -69,7 +69,8 @@ h4 {
 }
 
 .button-text {
-  font-size: 0.875rem;
+  font: 700 0.875rem var(--ff);
+  color: var(--text-title);
 }
 
 .subtitle {

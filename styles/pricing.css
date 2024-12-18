@@ -1,9 +1,15 @@
 #pricing {
   max-width: 90rem;
+  width: 100%;
   margin-inline: auto;
 
   display: grid;
   justify-content: center;
+
+  background: url(../assets/images/pricing-background.png), url(../assets/images/blur-pricing.svg);
+  background-repeat: no-repeat, no-repeat;
+  background-position: 50%, 50%;
+  background-size: auto, 59rem;
 
   & .content {
     margin-block: 12.13rem 18.9rem;
@@ -11,7 +17,175 @@
     & > div:nth-child(1) {
       text-align: center;
   
-      margin-bottom: 3.5rem;
+      margin-bottom: 8.63rem;
+    }
+
+    & > div:nth-child(2) {
+      width: 100%;
+
+      display: flex;
+
+      & > .card {
+        padding: 2rem 2rem 1.75rem;
+        background-color: var(--shape-base);
+        border: 1px solid var(--shape-stroke);
+        border-radius: 1.5rem;
+
+        & > h4 + div {
+          display: flex;
+          align-items: baseline;
+
+          margin-bottom: .5rem;
+        }
+
+        & > span {
+          font: 400 0.875rem/1.4 var(--ff);
+          color: var(--text-label);
+        }
+
+        & > span + div {
+          display: grid;
+          gap: 0.75rem;
+
+          & > div {
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+
+            & > img {
+              width: 0.875rem;
+            }
+
+            & > p {
+              font: 400 0.75rem/1.4 var(--ff);
+            }
+          }
+        }
+
+        & > button {
+          width: 100%;
+          border: 0;
+          padding-block: .75rem;
+          border-radius: .5rem;
+
+          margin-top: 1.5rem;
+        }
+      }
+
+      & > .card:nth-child(1), .card:nth-child(3) {
+        & > h4:nth-child(1) {
+          color: var(--blue-light);
+          margin-bottom: 1.5rem;
+        }
+
+        & > button {
+          background-color: var(--blue-dark);
+        }
+      }
+
+      & > .card:nth-child(1) {
+        position: relative;
+
+        transform: rotate(-8deg) translateY(3.5rem) translateX(-0.7rem);
+
+        & > div:nth-child(3) {
+          position: absolute;
+          top: -1.8rem;
+          left: -2.1rem;
+
+          display: flex;
+          flex-direction: column-reverse;
+          gap: .8rem;
+
+          width: 2.2rem;
+
+          & > img:nth-child(1) {
+            width: 0.82rem;
+          }
+
+          & > img:nth-child(2) {
+            width: 1.63rem;
+            align-self: end;
+          }
+        }
+
+        & > span + div {
+          margin-top: 6.8rem;
+        }
+      }
+
+      & > .card:nth-child(2) {
+        z-index: 1;
+        background-color: var(--shape-hover);
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border: none;
+        position: relative;
+
+        & > img {
+          position: absolute; 
+          top: -3.18rem;
+        }
+
+        & > div:first-child {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+
+          margin-bottom: 1.5rem;
+
+          & > h4 {
+            color: var(--pink-light);
+          }
+
+          & > span {
+            background-color: var(--shape-stroke);
+            padding: 0.563rem 1.25rem;
+            border-radius: 1rem;
+          }
+
+          & + div {
+            display: flex;
+            align-items: baseline;
+
+            margin-bottom: .5rem;
+          }
+        }
+
+        & > span + div {
+          margin-top: 4.38rem;
+        }
+
+        & > button {
+          background-color: var(--pink-dark);
+        }
+      }
+
+      & > .card:nth-child(3) {
+        transform: rotate(8deg) translateY(3.5rem) translateX(0.7rem);
+
+        & > div:nth-child(3) {
+          position: absolute;
+          bottom: -1.6rem;
+          right: -2.8rem;
+          display: flex;
+          align-items: flex-end;
+          gap: 1.3rem;
+          height: 2rem;
+
+          & > img:nth-child(1) {
+            width: 0.82rem;
+          }
+
+          & > img:nth-child(2) {
+            width: 1.63rem;
+            align-self: flex-start;
+          }
+        }
+
+        & > span + div {
+          margin-top: 3.2rem;
+        }
+      }
     }
   }
 }
