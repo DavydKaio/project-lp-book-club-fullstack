@@ -14,6 +14,28 @@
   & .content {
     margin-block: 12.13rem 18.9rem;
 
+    & > div:nth-child(2) {
+      & > .card:nth-child(1) {
+        animation: slideCardLeftOut 1s ease forwards;
+      }
+
+      & > .card:nth-child(3) {
+        animation: slideCardRightOut 1s ease forwards;
+      }
+    }
+
+    &:hover {
+      & > div:nth-child(2) {
+        & > .card:nth-child(1) {
+          animation: slideCardLeftIn 1s ease forwards;
+        }
+
+        & > .card:nth-child(3) {
+          animation: slideCardRightIn 1s ease forwards;
+        }
+      }
+    }
+
     & > div:nth-child(1) {
       text-align: center;
   
@@ -25,11 +47,31 @@
 
       display: flex;
 
+      &:not(:hover) {
+        & > .card:nth-child(2) {
+          z-index: 2;
+          background-color: var(--shape-hover);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          border: 1px solid transparent;
+        }
+      }
+
       & > .card {
         padding: 2rem 2rem 1.75rem;
-        background-color: var(--shape-base);
-        border: 1px solid var(--shape-stroke);
         border-radius: 1.5rem;
+
+        &:hover {
+          z-index: 2;
+          background-color: var(--shape-hover);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          border: 1px solid transparent;
+        }
+
+        &:not(:hover) {
+          z-index: 0;
+          background-color: var(--shape-base);
+          border: 1px solid var(--shape-stroke);
+        }
 
         & > h4 + div {
           display: flex;
@@ -80,13 +122,63 @@
 
         & > button {
           background-color: var(--blue-dark);
+          position: relative;
+          overflow: hidden;
+
+          &::before {
+            content: "";
+            background-color: var(--blue-mid);
+            z-index: 1;
+
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            transform: translateX(-50%) translateY(-50%);
+
+            transition: width .4s ease, height .4s ease;
+          }
+
+          &:hover::before {
+            width: 250px;
+            height: 250px;
+
+            transition: width .7s ease, height .7s ease;
+          }
+
+          & > span {
+            position: relative;
+            z-index: 2;
+          }
         }
       }
 
       & > .card:nth-child(1) {
         position: relative;
 
-        transform: rotate(-8deg) translateY(3.5rem) translateX(-0.7rem);
+        transform: rotate(0) translateY(0) translateX(17.3rem);
+
+        transition: translate .7s ease, background-color .7s ease;
+
+        &:hover {
+          translate: 0 -1.5rem;
+
+          transition: translate .7s ease, background-color .7s ease;
+
+          & > div:nth-child(3) {
+            & > img:nth-child(1) {
+              transform: rotate(12deg);
+              transition: transform .7s ease;
+            }
+
+            & > img:nth-child(2) {
+              transform: rotate(-12deg);
+              transition: transform .7s ease;
+            }
+          }
+        }
 
         & > div:nth-child(3) {
           position: absolute;
@@ -101,11 +193,13 @@
 
           & > img:nth-child(1) {
             width: 0.82rem;
+            transition: transform .7s ease;
           }
 
           & > img:nth-child(2) {
             width: 1.63rem;
             align-self: end;
+            transition: transform .7s ease;
           }
         }
 
@@ -116,10 +210,15 @@
 
       & > .card:nth-child(2) {
         z-index: 1;
-        background-color: var(--shape-hover);
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-        border: none;
         position: relative;
+
+        transition: transform .7s ease, background-color .7s ease;
+
+        &:hover {
+          transform: translateY(-1.5rem);
+
+          transition: transform .7s ease, background-color .7s ease;
+        }
 
         & > img {
           position: absolute; 
@@ -157,11 +256,61 @@
 
         & > button {
           background-color: var(--pink-dark);
+          position: relative;
+          overflow: hidden;
+
+          &::before {
+            content: "";
+            background-color: var(--pink-base);
+            z-index: 1;
+
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            transform: translateX(-50%) translateY(-50%);
+
+            transition: width .4s ease, height .4s ease;
+          }
+
+          &:hover::before {
+            width: 250px;
+            height: 250px;
+
+            transition: width .7s ease, height .7s ease;
+          }
+
+          & > span {
+            position: relative;
+            z-index: 2;
+          }
         }
       }
 
       & > .card:nth-child(3) {
-        transform: rotate(8deg) translateY(3.5rem) translateX(0.7rem);
+        transform: rotate(0) translateY(0) translateX(-17.3rem);
+
+        transition: translate .7s ease, background-color .7s ease;
+
+        &:hover {
+          translate: 0 -1.5rem;
+
+          transition: translate .7s ease, background-color .7s ease;
+
+          & > div:nth-child(3) {
+            & > img:nth-child(1) {
+              transform: rotate(-12deg);
+              transition: transform .7s ease;
+            }
+
+            & > img:nth-child(2) {
+              transform: rotate(12deg);
+              transition: transform .7s ease;
+            }
+          }
+        }
 
         & > div:nth-child(3) {
           position: absolute;
@@ -179,13 +328,63 @@
           & > img:nth-child(2) {
             width: 1.63rem;
             align-self: flex-start;
+            transition: transform .7s ease;
           }
         }
 
         & > span + div {
           margin-top: 3.2rem;
+          transition: transform .7s ease;
         }
       }
     }
+  }
+}
+
+@keyframes slideCardLeftIn {
+  70% {
+    transform: rotate(-8deg) translateY(calc(3.5rem + 5px)) translateX(calc(-0.7rem - 10px));
+  }
+
+  100% {
+    transform: rotate(-8deg) translateY(3.5rem) translateX(-0.7rem);
+  }
+}
+
+@keyframes slideCardLeftOut {
+  0% {
+    transform: rotate(-8deg) translateY(3.5rem) translateX(-0.7rem);
+  }
+
+  30% {
+    transform: rotate(-8deg) translateY(calc(3.5rem + 5px)) translateX(calc(-0.7rem - 10px));
+  }
+
+  100% {
+    transform: rotate(0) translateY(0) translateX(17.3rem);
+  }
+}
+
+@keyframes slideCardRightIn {
+  70% {
+    transform: rotate(8deg) translateY(calc(3.5rem + 5px)) translateX(calc(0.7rem + 10px));
+  }
+
+  100% {
+    transform: rotate(8deg) translateY(3.5rem) translateX(0.7rem);
+  }
+}
+
+@keyframes slideCardRightOut {
+  0% {
+    transform: rotate(8deg) translateY(3.5rem) translateX(0.7rem);
+  }
+
+  30% {
+    transform: rotate(8deg) translateY(calc(3.5rem + 5px)) translateX(calc(0.7rem + 10px));
+  }
+
+  100% {
+    transform: rotate(0) translateY(0) translateX(-17.3rem);
   }
 }

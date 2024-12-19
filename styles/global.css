@@ -40,7 +40,7 @@ html {
   color: var(--text-body);
   scroll-behavior: smooth;
 
-  zoom: .6;
+  zoom: 1;
 }
 
 body {
