@@ -39,8 +39,6 @@ html {
   font-family: var(--ff);
   color: var(--text-body);
   scroll-behavior: smooth;
-
-  zoom: .6;
 }
 
 body {
