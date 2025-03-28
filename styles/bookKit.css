@@ -8,7 +8,7 @@
   justify-content: center;
   text-align: center;
 
-  background: url(../assets/images/blur-book.svg) 50% 40%/cover no-repeat;
+  background: url(../assets/images/blur-book.svg) 50% 40% / cover no-repeat;
 
   & > div:nth-child(1) {
     margin-top: 14.7rem;
@@ -32,7 +32,7 @@
 
     &:hover {
       & > img:nth-child(2) {
-        animation: slideBookmarkYellowIn 1s ease forwards
+        animation: slideBookmarkYellowIn 1s ease forwards;
       }
 
       & > img:nth-child(3) {
@@ -43,15 +43,15 @@
         animation: slideBookmarkTextIn 1s ease forwards;
         & > img {
           width: 9rem;
-          transition: width .8s ease;
-        } 
+          transition: width 0.8s ease;
+        }
       }
 
       & > .coverText {
         animation: slideCoverTextIn 1s ease forwards;
         & > img {
           width: 10.94rem;
-          transition: width .8s ease;
+          transition: width 0.8s ease;
         }
       }
 
@@ -63,7 +63,7 @@
         animation: slidePinTextIn 1s ease forwards;
         & > img {
           width: 6.56rem;
-          transition: width .8s ease;
+          transition: width 0.8s ease;
         }
       }
     }
@@ -80,7 +80,7 @@
       top: 8.75rem;
       z-index: -1;
 
-      animation: slideBookmarkYellowOut .7s ease forwards;
+      animation: slideBookmarkYellowOut 0.7s ease forwards;
     }
 
     & > img:nth-child(3) {
@@ -91,7 +91,7 @@
       top: 8.75rem;
       z-index: -2;
 
-      animation: slideBookmarkPurpleOut .7s ease forwards;
+      animation: slideBookmarkPurpleOut 0.7s ease forwards;
     }
 
     & > .bookmarkText {
@@ -100,14 +100,14 @@
       bottom: 20rem;
       z-index: -1;
 
-      animation: slideBookmarkTextOut .7s ease forwards;
-      
+      animation: slideBookmarkTextOut 0.7s ease forwards;
+
       & > img {
         width: 3rem;
         margin-bottom: 1rem;
         margin-left: 8.5rem;
 
-        transition: width .8s ease;
+        transition: width 0.8s ease;
       }
     }
 
@@ -117,14 +117,14 @@
       left: 3rem;
       z-index: -1;
 
-      animation: slideCoverTextOut .7s ease forwards;
+      animation: slideCoverTextOut 0.7s ease forwards;
 
       & > img {
         width: 3rem;
         margin-top: 1rem;
         margin-right: -9.5rem;
 
-        transition: width .8s ease;
+        transition: width 0.8s ease;
       }
     }
 
@@ -144,12 +144,201 @@
       bottom: 20rem;
       z-index: -1;
 
-      animation: slidePinTextOut .7s ease forwards;
+      animation: slidePinTextOut 0.7s ease forwards;
 
       & > img {
         width: 3rem;
         margin-top: 1rem;
-        transition: width .8s ease;
+        transition: width 0.8s ease;
+      }
+    }
+  }
+}
+
+@media (max-width: 375px) {
+  #bookKit {
+    background: url(../assets/images/blur-book.svg) 50% 15%/150% no-repeat;
+
+    & > div:nth-child(1) {
+      margin-top: 6.5rem;
+      margin-bottom: 0.5rem;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+
+      & img {
+        width: 1.25rem;
+      }
+
+      & h3 {
+        font-size: 1.5rem;
+      }
+    }
+
+    & p {
+      font-size: 0.875rem;
+    }
+
+    & > p + div {
+      margin-block: 4rem 5.5rem;
+      padding-block: unset;
+
+      position: relative;
+
+      &:hover {
+        & > img:nth-child(2) {
+          animation: none;
+        }
+
+        & > img:nth-child(3) {
+          animation: none;
+        }
+
+        & > .bookmarkText {
+          animation: none;
+          & > img {
+            width: 3rem;
+            height: 3.125rem;
+            transition: none;
+          }
+        }
+
+        & > .coverText {
+          animation: none;
+          & > img {
+            width: 3.222rem;
+            height: 0.625rem;
+
+            transition: none;
+          }
+        }
+
+        & > img:nth-child(6) {
+          animation: none;
+        }
+
+        & > .pinText {
+          animation: none;
+          & > img {
+            width: 2.25rem;
+            height: 2.625rem;
+
+            transition: none;
+          }
+        }
+      }
+
+      & > img:first-child {
+        width: 9.875rem;
+        margin-block: 3.375rem 3.625rem;
+      }
+
+      & > img:nth-child(2) {
+        width: 3.625rem;
+        height: 11.25rem;
+
+        position: absolute;
+        right: 2.3rem;
+        top: 1.7rem;
+        z-index: -1;
+
+        transform: rotate(11.72deg);
+        animation: none;
+      }
+
+      & > img:nth-child(3) {
+        width: 3.625rem;
+        height: 11.25rem;
+
+        position: absolute;
+        right: 0.3rem;
+        top: 4rem;
+        z-index: -2;
+
+        transform: rotate(21deg);
+        animation: none;
+      }
+
+      & > .bookmarkText {
+        position: absolute;
+        right: -1.6rem;
+        bottom: 1.4rem;
+        z-index: -1;
+
+        animation: none;
+
+        & > img {
+          width: 3rem;
+          height: 3.125rem;
+
+          margin-bottom: auto;
+          margin-left: auto;
+          transition: none;
+        }
+
+        & p {
+          font-size: 0.625rem;
+          padding-right: 2.3rem;
+        }
+      }
+
+      & > .coverText {
+        position: absolute;
+        top: 1.8rem;
+        left: 0.4rem;
+        z-index: -1;
+
+        animation: none;
+
+        & > img {
+          width: 3.222rem;
+          height: 0.625rem;
+
+          margin-top: 0.625rem;
+          margin-right: auto;
+          transition: none;
+        }
+
+        & p {
+          font-size: 0.625rem;
+          padding-right: 1.4rem;
+        }
+      }
+
+      & > img:nth-child(6) {
+        width: 4.6875rem;
+        height: 5.3125rem;
+
+        position: absolute;
+        left: 1.9rem;
+        bottom: 2rem;
+        z-index: -1;
+
+        transform: rotate(-7.55deg);
+        animation: none;
+      }
+
+      & > .pinText {
+        position: absolute;
+        left: -0.4rem;
+        bottom: 6.2rem;
+        z-index: -1;
+
+        animation: none;
+
+        & > img {
+          width: 2.25rem;
+          height: 2.625rem;
+
+          margin-top: 0.625rem;
+          transition: none;
+        }
+
+        & p {
+          font-size: 0.625rem;
+        }
       }
     }
   }
@@ -157,7 +346,8 @@
 
 @keyframes slideBookmarkYellowIn {
   50% {
-    transform: translateX(calc(8.3rem + 7px)) translateY(calc(-6rem - 7px)) rotate(12deg);
+    transform: translateX(calc(8.3rem + 7px)) translateY(calc(-6rem - 7px))
+      rotate(12deg);
   }
 
   100% {
@@ -171,7 +361,8 @@
   }
 
   50% {
-    transform: translateX(calc(8.3rem + 7px)) translateY(calc(-6rem - 7px)) rotate(12deg);
+    transform: translateX(calc(8.3rem + 7px)) translateY(calc(-6rem - 7px))
+      rotate(12deg);
   }
 
   100% {
@@ -253,7 +444,8 @@
 
 @keyframes slidePinIn {
   50% {
-    transform: translateX(calc(-10.2rem - 7px)) translateY(calc(3rem + 7px)) rotate(-8deg);
+    transform: translateX(calc(-10.2rem - 7px)) translateY(calc(3rem + 7px))
+      rotate(-8deg);
   }
 
   100% {
@@ -267,7 +459,8 @@
   }
 
   50% {
-    transform: translateX(calc(-10.2rem - 7px)) translateY(calc(3rem + 7px)) rotate(-8deg);
+    transform: translateX(calc(-10.2rem - 7px)) translateY(calc(3rem + 7px))
+      rotate(-8deg);
   }
 
   100% {
