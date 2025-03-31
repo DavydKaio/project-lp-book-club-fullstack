@@ -345,6 +345,9 @@
 
 @media (max-width: 375px) {
   #pricing {
+    max-width: none;
+    overflow: hidden;
+
     & .content {
       margin-block: 6.5rem auto;
 
