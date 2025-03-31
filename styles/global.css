@@ -1,4 +1,6 @@
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -11,22 +13,22 @@
 }
 
 :root {
-  --pink-light: #C59DD2;
-  --pink-base: #9547A5;
-  --pink-dark: #7D298A;
-  --pink-low: #3F0F41;
-  --blue-light: #73B6D2;
-  --blue-base: #358BB9;
-  --blue-mid: #2374A4;
-  --blue-dark: #144A72;
-  --blue-low: #08233C;
+  --pink-light: #c59dd2;
+  --pink-base: #9547a5;
+  --pink-dark: #7d298a;
+  --pink-low: #3f0f41;
+  --blue-light: #73b6d2;
+  --blue-base: #358bb9;
+  --blue-mid: #2374a4;
+  --blue-dark: #144a72;
+  --blue-low: #08233c;
   --shape-stroke: #002347;
   --shape-hover: #001933;
-  --shape-base: #000F1F;
-  --shape-background: #00050A;
-  --text-title: #F8FBFB;
-  --text-body: #E2E7E9;
-  --text-label: #BAC6C9;
+  --shape-base: #000f1f;
+  --shape-background: #00050a;
+  --text-title: #f8fbfb;
+  --text-body: #e2e7e9;
+  --text-label: #bac6c9;
 
   --fw-base: 400;
   --fw-md: 500;
@@ -45,7 +47,11 @@ body {
   background-color: var(--shape-background);
 }
 
-h1, h2, h3, h4, .button-text {
+h1,
+h2,
+h3,
+h4,
+.button-text {
   color: var(--text-title);
   font-weight: var(--fw-bold);
 }
@@ -93,4 +99,10 @@ img {
 
 a {
   text-decoration: none;
+}
+
+@media (max-width: 375px) {
+  .desktop-only {
+    display: none;
+  }
 }
